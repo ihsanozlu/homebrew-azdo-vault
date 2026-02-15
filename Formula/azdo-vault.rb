@@ -32,7 +32,6 @@ class AzdoVault < Formula
       end
 
     bin.install bin_name => "azdo-vault"
-    generate_completions_from_executable(bin/"azdo-vault", "completion")
   end
 
   test do
