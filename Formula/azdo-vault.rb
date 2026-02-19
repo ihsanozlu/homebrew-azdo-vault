@@ -1,25 +1,25 @@
 class AzdoVault < Formula
   desc "Cross-organization Azure DevOps backup and migration CLI"
   homepage "https://github.com/ihsanozlu/azdo-vault"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.2/azdo-vault-darwin-arm64"
-      sha256 "e1474758bdf57a8635e337d3954e158ff2977e0484ca6a85b551a559ec213bf5"
+      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.3/azdo-vault-darwin-arm64"
+      sha256 "c8d81e9987a62fe1e897363a1e35886d53377576e0fd94566992e0bfae89d431"
     else
       url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.2/azdo-vault-darwin-amd64"
-      sha256 "29d84d0c3459ae3fe38288b65f0f9757241dddf8bd24258c72d89fe2585b2225"
+      sha256 "89a0faecd6a5ab15cd2e4f1f3c32dd82d34b9bff77952c5d9f033ba55a5ea93f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.2/azdo-vault-linux-arm64"
-      sha256 "d1d9e0f544279b86846353b9f4ded24c5f4dbf37b1b51ada211057f10c97b56b"
+      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.3/azdo-vault-linux-arm64"
+      sha256 "09c3feeb194d9bb343c3bebc3dcde641ae44d5790f94f078cd59125b22e943f3"
     else
-      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.2/azdo-vault-linux-amd64"
-      sha256 "6a6b5cd369b476652daa8528c98af357dc34fd960c7686a0f57ba10ee1814657"
+      url "https://github.com/ihsanozlu/azdo-vault/releases/download/v0.1.3/azdo-vault-linux-amd64"
+      sha256 "f710769cc5cc6f18c90125ad0be790d21d8b8dbd5576e5456312e3c30d6bdbc5"
     end
   end
 
@@ -32,6 +32,7 @@ class AzdoVault < Formula
       end
 
     bin.install bin_name => "azdo-vault"
+    chmod 0755, bin/"azdo-vault"
     generate_completions_from_executable(bin/"azdo-vault", "completion")
   end
 
